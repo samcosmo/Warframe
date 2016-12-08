@@ -14,10 +14,33 @@ namespace Warframe.Controllers
 
             names.Add(new Models.Link("Fleeting Expertise", "Home/Mod"));
 
+            names.Add(new Models.Link("Sound Quake", "Home/Ability"));
+
+            names.Add(new Models.Link("Arcane Fuck", "Home/Arcane"));
+
+            names.Add(new Models.Link("Arcane Aura Helmet", "Home/ArcaneHelmet"));
+
+            names.Add(new Models.Link("Atlas", "Home/Warframe"));
+
+            names.Add(new Models.Link("Tonkor", "Home/Weapon"));
+
             ViewData["names"] = names;
 
             return View();
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public IActionResult Ability()
         {
