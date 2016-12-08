@@ -54,7 +54,7 @@ namespace Warframe
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/WarframeDatabase/Error");
             }
 
             app.UseApplicationInsightsExceptionTelemetry();
@@ -65,7 +65,7 @@ namespace Warframe
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=WarframeDatabase}/{action=Index}/{id?}");
             });
         }
     }

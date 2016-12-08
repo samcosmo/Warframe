@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Warframe.Controllers
 {
-    public class HomeController : Controller
+    public class WarframeDatabaseController : Controller
     {
         /*
          * Index
@@ -19,12 +19,12 @@ namespace Warframe.Controllers
         public IActionResult Index()
         {
             List<Models.Link> names = new List<Models.Link>();
-            names.Add(new Models.Link("Fleeting Expertise", "Home/Mod/Fleeting Expertise"));
-            names.Add(new Models.Link("Sound Quake", "Home/Ability"));
-            names.Add(new Models.Link("Arcane Energize", "Home/Arcane"));
-            names.Add(new Models.Link("Arcane Aura Helmet", "Home/ArcaneHelmet"));
-            names.Add(new Models.Link("Atlas", "Home/Warframe"));
-            names.Add(new Models.Link("Tonkor", "Home/Weapon"));
+            names.Add(new Models.Link("Fleeting Expertise", "WarframeDatabase/Mod/Fleeting Expertise"));
+            names.Add(new Models.Link("Sound Quake", "WarframeDatabase/Ability"));
+            names.Add(new Models.Link("Arcane Energize", "WarframeDatabase/Arcane"));
+            names.Add(new Models.Link("Arcane Aura Helmet", "WarframeDatabase/ArcaneHelmet"));
+            names.Add(new Models.Link("Atlas", "WarframeDatabase/Warframe"));
+            names.Add(new Models.Link("Tonkor", "WarframeDatabase/Weapon"));
 
             ViewData["names"] = names;
 
@@ -49,7 +49,7 @@ namespace Warframe.Controllers
         {
             ViewData["Mod Name"] = "Fleeting Expertise";
 
-            List <Models.ModRank> ranks = new List<Models.ModRank>();
+            List<Models.ModRank> ranks = new List<Models.ModRank>();
             ranks.Add(new Models.ModRank(0, 6, "+10% POWER EFFICIENCY -10% POWER DURATION"));
             ranks.Add(new Models.ModRank(1, 7, "+20% POWER EFFICIENCY -20% POWER DURATION"));
             ranks.Add(new Models.ModRank(2, 8, "+30% POWER EFFICIENCY -30% POWER DURATION"));
@@ -109,6 +109,5 @@ namespace Warframe.Controllers
         {
             return View();
         }
-
     }
 }
