@@ -19,7 +19,6 @@ namespace Warframe.Controllers
         public IActionResult Index()
         {
             List<Models.Link> names = new List<Models.Link>();
-
             names.Add(new Models.Link("Fleeting Expertise", "Home/Mod/Fleeting Expertise"));
             names.Add(new Models.Link("Sound Quake", "Home/Ability"));
             names.Add(new Models.Link("Arcane Energize", "Home/Arcane"));
