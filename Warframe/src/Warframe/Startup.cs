@@ -69,7 +69,7 @@ namespace Warframe
 
                 routes.MapRoute(
                      name: "specific",
-                     template: "{controller=WarframeDatabase}/{action=Index}/{id?}");
+                     template: "{controller=WarframeDatabase}/{action=Index}/{name}/{id?}");
             });
         }
     }

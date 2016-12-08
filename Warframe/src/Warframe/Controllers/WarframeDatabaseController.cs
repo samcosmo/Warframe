@@ -45,7 +45,7 @@ namespace Warframe.Controllers
          * Mod
          */
 
-        public IActionResult Mod()
+        public IActionResult Mod(String name)
         {
             ViewData["Mod Name"] = "Fleeting Expertise";
 
