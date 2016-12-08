@@ -10,6 +10,13 @@ namespace Warframe.Controllers
     {
         public IActionResult Index()
         {
+            List<String> names = new List<String>();
+
+            names.Add("Fleeting Expertise");
+            names.Add("Arcane Grace");
+
+            ViewData["names"] = names;
+
             return View();
         }
 
