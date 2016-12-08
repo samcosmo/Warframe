@@ -20,16 +20,11 @@ namespace Warframe.Controllers
         {
             List<Models.Link> names = new List<Models.Link>();
 
-            names.Add(new Models.Link("Fleeting Expertise", "Home/Mod"));
-
+            names.Add(new Models.Link("Fleeting Expertise", "Home/Mod/Fleeting Expertise"));
             names.Add(new Models.Link("Sound Quake", "Home/Ability"));
-
             names.Add(new Models.Link("Arcane Energize", "Home/Arcane"));
-
             names.Add(new Models.Link("Arcane Aura Helmet", "Home/ArcaneHelmet"));
-
             names.Add(new Models.Link("Atlas", "Home/Warframe"));
-
             names.Add(new Models.Link("Tonkor", "Home/Weapon"));
 
             ViewData["names"] = names;
