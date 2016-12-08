@@ -29,11 +29,6 @@ namespace Warframe.Controllers
             return View();
         }
 
-        public IActionResult ModS()
-        {
-            return View();
-        }
-
         public IActionResult Arcane()
         {
             return View();
