@@ -24,7 +24,7 @@ namespace Warframe.Controllers
 
             names.Add(new Models.Link("Sound Quake", "Home/Ability"));
 
-            names.Add(new Models.Link("Arcane Fuck", "Home/Arcane"));
+            names.Add(new Models.Link("Arcane Energize", "Home/Arcane"));
 
             names.Add(new Models.Link("Arcane Aura Helmet", "Home/ArcaneHelmet"));
 
