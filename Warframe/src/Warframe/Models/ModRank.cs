@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace Warframe.Models
 {
-    public class ModRank
+    public class Mod
     {
         private int rank;
         private int drain;
         private String effect;
 
-        public ModRank(int rank, int drain, String effect)
+        public Mod(int rank, int drain, String effect)
         {
             this.rank = rank;
             this.drain = drain;

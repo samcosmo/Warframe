@@ -23,7 +23,7 @@ namespace Warframe.Controllers
             names.Add(new Models.Link("Sound Quake", "WarframeDatabase/Ability"));
             names.Add(new Models.Link("Arcane Energize", "WarframeDatabase/Arcane"));
             names.Add(new Models.Link("Arcane Aura Helmet", "WarframeDatabase/ArcaneHelmet"));
-            names.Add(new Models.Link("Atlas", "WarframeDatabase/Warframe"));
+            names.Add(new Models.Link("Banshee", "WarframeDatabase/Warframe"));
             names.Add(new Models.Link("Tonkor", "WarframeDatabase/Weapon"));
 
             ViewData["names"] = names;
@@ -49,13 +49,13 @@ namespace Warframe.Controllers
         {
             ViewData["Mod Name"] = "Fleeting Expertise";
 
-            List<Models.ModRank> ranks = new List<Models.ModRank>();
-            ranks.Add(new Models.ModRank(0, 6, "+10% POWER EFFICIENCY -10% POWER DURATION"));
-            ranks.Add(new Models.ModRank(1, 7, "+20% POWER EFFICIENCY -20% POWER DURATION"));
-            ranks.Add(new Models.ModRank(2, 8, "+30% POWER EFFICIENCY -30% POWER DURATION"));
-            ranks.Add(new Models.ModRank(3, 9, "+40% POWER EFFICIENCY -40% POWER DURATION"));
-            ranks.Add(new Models.ModRank(4, 10, "+50% POWER EFFICIENCY -50% POWER DURATION"));
-            ranks.Add(new Models.ModRank(5, 11, "+60% POWER EFFICIENCY -60% POWER DURATION"));
+            List<Models.Mod> ranks = new List<Models.Mod>();
+            ranks.Add(new Models.Mod(0, 6, "+10% POWER EFFICIENCY -10% POWER DURATION"));
+            ranks.Add(new Models.Mod(1, 7, "+20% POWER EFFICIENCY -20% POWER DURATION"));
+            ranks.Add(new Models.Mod(2, 8, "+30% POWER EFFICIENCY -30% POWER DURATION"));
+            ranks.Add(new Models.Mod(3, 9, "+40% POWER EFFICIENCY -40% POWER DURATION"));
+            ranks.Add(new Models.Mod(4, 10, "+50% POWER EFFICIENCY -50% POWER DURATION"));
+            ranks.Add(new Models.Mod(5, 11, "+60% POWER EFFICIENCY -60% POWER DURATION"));
             ViewData["Ranks"] = ranks;
 
             return View();
@@ -87,7 +87,7 @@ namespace Warframe.Controllers
 
         public IActionResult Warframe()
         {
-            ViewData["Warframe Name"] = "Atlas";
+            ViewData["Warframe Name"] = "Banshee";
             return View();
         }
 
