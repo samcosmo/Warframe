@@ -22,7 +22,30 @@ namespace Warframe.Models
             this.power = power;
         }
         
-        public int GetRank
+        public int GetRank()
+        {
+            return this.rank;
+        }
+
+        public int GetCapacity()
+        {
+            return this.capacity;
+        }
+
+        public int GetHealth()
+        {
+            return this.health;
+        }
+
+        public int GetShield()
+        {
+            return this.shield;
+        }
+
+        public int GetPower()
+        {
+            return this.power;
+        }
 
     }
 }
