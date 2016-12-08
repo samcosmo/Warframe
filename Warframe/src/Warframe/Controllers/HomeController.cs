@@ -4,6 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
+/*
+ * WarframeDatabaseContact@gmail.com
+ */
+
 namespace Warframe.Controllers
 {
     public class HomeController : Controller
