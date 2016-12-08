@@ -51,6 +51,15 @@ namespace Warframe.Controllers
         {
             ViewData["Mod Name"] = "Fleeting Expertise";
 
+            List <Models.ModRank> ranks = new List<Models.ModRank>();
+            ranks.Add(new Models.ModRank(0, 6, "+10% POWER EFFICIENCY -10% POWER DURATION"));
+            ranks.Add(new Models.ModRank(1, 7, "+20% POWER EFFICIENCY -20% POWER DURATION"));
+            ranks.Add(new Models.ModRank(2, 8, "+30% POWER EFFICIENCY -30% POWER DURATION"));
+            ranks.Add(new Models.ModRank(3, 9, "+40% POWER EFFICIENCY -40% POWER DURATION"));
+            ranks.Add(new Models.ModRank(4, 10, "+50% POWER EFFICIENCY -50% POWER DURATION"));
+            ranks.Add(new Models.ModRank(5, 11, "+60% POWER EFFICIENCY -60% POWER DURATION"));
+            ViewData["Ranks"] = ranks;
+
             return View();
         }
 

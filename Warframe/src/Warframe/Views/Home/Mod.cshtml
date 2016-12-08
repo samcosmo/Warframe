@@ -23,6 +23,20 @@
                 Effect
             </td>
         </tr>
+        @foreach (var rank in ViewData["Ranks"] as List<Warframe.Models.ModRank>)
+        {
+            <tr>
+                <td>
+                    @rank.GetRank()
+                </td>
+                <td>
+                    @rank.GetDrain()
+                </td>
+                <td>
+                    @rank.GetEffect()
+                </td>
+            </tr>
+        }
     </table>
 </body>
 </html>
