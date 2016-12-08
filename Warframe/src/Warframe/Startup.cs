@@ -64,12 +64,12 @@ namespace Warframe
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=WarframeDatabase}/{action=Index}/{id?}");
+                    name: "specific",
+                    template: "{controller=WarframeDatabase}/{action=Index}/{name}/{id?}");
 
                 routes.MapRoute(
-                     name: "specific",
-                     template: "{controller=WarframeDatabase}/{action=Index}/{name}/{id?}");
+                    name: "default",
+                    template: "{controller=WarframeDatabase}/{action=Index}/{id?}");
             });
         }
     }

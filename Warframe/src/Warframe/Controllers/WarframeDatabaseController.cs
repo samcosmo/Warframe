@@ -19,7 +19,7 @@ namespace Warframe.Controllers
         public IActionResult Index()
         {
             List<Models.Link> names = new List<Models.Link>();
-            names.Add(new Models.Link("Fleeting Expertise", "WarframeDatabase/Mod/Fleeting Expertise"));
+            names.Add(new Models.Link("Fleeting Expertise", "WarframeDatabase/Mod/Fleeting%20Expertise"));
             names.Add(new Models.Link("Sound Quake", "WarframeDatabase/Ability"));
             names.Add(new Models.Link("Arcane Energize", "WarframeDatabase/Arcane"));
             names.Add(new Models.Link("Arcane Aura Helmet", "WarframeDatabase/ArcaneHelmet"));
@@ -47,7 +47,7 @@ namespace Warframe.Controllers
 
         public IActionResult Mod(String name)
         {
-            ViewData["Mod Name"] = name;
+            ViewData["Mod Name"] = name.Replace("%20", " ");
 
             List<Models.Mod> ranks = new List<Models.Mod>();
             ranks.Add(new Models.Mod(0, 6, "+10% POWER EFFICIENCY -10% POWER DURATION"));
