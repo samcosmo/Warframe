@@ -10,10 +10,9 @@ namespace Warframe.Controllers
     {
         public IActionResult Index()
         {
-            List<String> names = new List<String>();
+            List<Models.Link> names = new List<Models.Link>();
 
-            names.Add("Fleeting Expertise");
-            names.Add("Arcane Grace");
+            names.Add(new Models.Link("Fleeting Expertise", "Home/Mods"));
 
             ViewData["names"] = names;
 
@@ -34,7 +33,6 @@ namespace Warframe.Controllers
         {
             return View();
         }
-
 
         public IActionResult Arcane()
         {

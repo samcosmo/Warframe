@@ -8,13 +8,11 @@
     <title>HOME</title>
 </head>
 <body>
-    <ul>
-        @foreach (var item in ViewData["names"] as List<String>)
-        {
-            <li>
-                @item
-            </li>
-        }
-    </ul>
+    <br>
+    @foreach (var item in ViewData["names"] as List<Warframe.Models.Link>)
+    {
+        <a href=@item.GetLink()>@item.GetText()</a>
+        <br>
+    }
 </body>
 </html>
