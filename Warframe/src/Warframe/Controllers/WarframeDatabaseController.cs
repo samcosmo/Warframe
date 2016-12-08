@@ -47,7 +47,7 @@ namespace Warframe.Controllers
 
         public IActionResult Mod(String name)
         {
-            ViewData["Mod Name"] = "Fleeting Expertise";
+            ViewData["Mod Name"] = name;
 
             List<Models.Mod> ranks = new List<Models.Mod>();
             ranks.Add(new Models.Mod(0, 6, "+10% POWER EFFICIENCY -10% POWER DURATION"));
@@ -67,7 +67,7 @@ namespace Warframe.Controllers
 
         public IActionResult Arcane()
         {
-            ViewData["Arcane Name"] = "Arcane Fuck";
+            ViewData["Arcane Name"] = "Arcane Energize";
             return View();
         }
 
