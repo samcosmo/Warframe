@@ -88,6 +88,11 @@ namespace Warframe.Controllers
         public IActionResult Warframe()
         {
             ViewData["Warframe Name"] = "Banshee";
+
+            List<Models.Warframe> frame = new List<Models.Warframe>();
+            frame.Add(new Models.Warframe(0, 0, 100, 100, 150));
+            frame.Add(new Models.Warframe(30, 30, 300, 300, 225));
+            ViewData["Frame"] = frame;
             return View();
         }
 

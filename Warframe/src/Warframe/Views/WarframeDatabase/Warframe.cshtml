@@ -10,7 +10,47 @@
 <body>
     <h1>
         @ViewData["Warframe Name"]
-    </h1>   
+    </h1> 
+    <table>
+        <tr>
+            <td>
+                Rank
+            </td>
+            <td>
+                Capacity
+            </td>
+            <td>
+                Health
+            </td>
+            <td>
+                Shield
+            </td>
+            <td>
+                Power
+            </td>
+        </tr>
+        @foreach (var frame in ViewData["Frame"] as List<Warframe.Models.Warframe>)
+        {
+            <tr>
+                <td>
+                    @frame.GetRank()
+                </td>
+                <td>
+                    @frame.GetCapacity()
+                </td>
+                <td>
+                    @frame.GetHealth()
+                </td>
+                <td>
+                    @frame.GetShield()
+                </td>
+                <td>
+                    @frame.GetPower()
+                </td>
+            </tr>
+
+        }
+    </table>  
     
 </body>
 </html>
