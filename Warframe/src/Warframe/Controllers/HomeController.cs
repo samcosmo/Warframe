@@ -12,7 +12,7 @@ namespace Warframe.Controllers
         {
             List<Models.Link> names = new List<Models.Link>();
 
-            names.Add(new Models.Link("Fleeting Expertise", "Home/Mods"));
+            names.Add(new Models.Link("Fleeting Expertise", "Home/Mod"));
 
             ViewData["names"] = names;
 
