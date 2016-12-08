@@ -39,6 +39,7 @@ namespace Warframe.Controllers
 
         public IActionResult Ability()
         {
+            ViewData["Ability Name"] = "Sound Quake";
             return View();
         }
 
@@ -59,6 +60,7 @@ namespace Warframe.Controllers
 
         public IActionResult Arcane()
         {
+            ViewData["Arcane Name"] = "Arcane Fuck";
             return View();
         }
 
@@ -68,6 +70,7 @@ namespace Warframe.Controllers
 
         public IActionResult ArcaneHelmet()
         {
+            ViewData["ArcaneHelmet Name"] = "Arcane Aura Helmet";
             return View();
         }
 
@@ -77,6 +80,7 @@ namespace Warframe.Controllers
 
         public IActionResult Warframe()
         {
+            ViewData["Warframe Name"] = "Atlas";
             return View();
         }
 
@@ -86,6 +90,7 @@ namespace Warframe.Controllers
 
         public IActionResult Weapon()
         {
+            ViewData["Weapon Name"] = "Tonkor";
             return View();
         }
 
