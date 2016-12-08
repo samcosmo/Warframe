@@ -13,7 +13,32 @@ namespace Warframe.Controllers
             return View();
         }
 
-        public IActionResult Abilitys()
+        public IActionResult Ability()
+        {
+            return View();
+        }
+
+        public IActionResult Mod()
+        {
+            return View();
+        }
+
+        public IActionResult Arcane()
+        {
+            return View();
+        }
+
+        public IActionResult ArcaneHelmet()
+        {
+            return View();
+        }
+
+        public IActionResult Warframe()
+        {
+            return View();
+        }
+
+        public IActionResult Weapon()
         {
             return View();
         }
