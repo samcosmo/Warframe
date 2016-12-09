@@ -15,5 +15,6 @@ tr, td.prop{
 table{
     opacity: 0.4;
     background-color:cyan;
+    margin: 0 auto;
 }
 
