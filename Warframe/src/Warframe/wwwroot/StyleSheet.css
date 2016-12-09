@@ -3,6 +3,12 @@
     width: 100%;
     height: 100vh;
     text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 p.title {
     color:red;
@@ -20,5 +26,12 @@ table{
 }
 footer{
     color:white;
+}
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+  /* Hide captions */
+  .carousel-caption {
+    display: none
+  }
 }
 
