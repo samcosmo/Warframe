@@ -8,31 +8,32 @@
     <title>Abilities</title>
 </head>
 <body>
-    <h1>
+    <link rel="stylesheet" href="~/StyleSheet.css"/>
+    <p class="title">
         @ViewData["Mod Name"]
-    </h1>
+    </p>
     <table>
-        <tr>
-            <td>
+        <tr class="prop">
+            <td class="prop">
                 Rank
             </td>
-            <td>
+            <td class="prop">
                 Drain
             </td>
-            <td>
+            <td class="prop">
                 Effect
             </td>
         </tr>
         @foreach (var rank in ViewData["Ranks"] as List<Warframe.Models.Mod>)
         {
-            <tr>
-                <td>
+            <tr class="prop">
+                <td class="prop">
                     @rank.GetRank()
                 </td>
-                <td>
+                <td class="prop">
                     @rank.GetDrain()
                 </td>
-                <td>
+                <td class="prop">
                     @rank.GetEffect()
                 </td>
             </tr>
