@@ -13,7 +13,7 @@
         @ViewData["Mod Name"]
     </p>
     <table>
-        <tr class="prop">
+        <tr>
             <td class="prop">
                 Rank
             </td>
@@ -26,7 +26,7 @@
         </tr>
         @foreach (var rank in ViewData["Ranks"] as List<Warframe.Models.Mod>)
         {
-            <tr class="prop">
+            <tr>
                 <td class="prop">
                     @rank.GetRank()
                 </td>

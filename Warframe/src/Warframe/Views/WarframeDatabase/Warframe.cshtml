@@ -13,39 +13,39 @@
         @ViewData["Warframe Name"]
     </h1> 
     <table>
-        <tr class="prop">
-            <td>
+        <tr>
+            <td class="prop">
                 Rank
             </td>
-            <td>
+            <td class="prop">
                 Capacity
             </td>
-            <td>
+            <td class="prop">
                 Health
             </td>
-            <td>
+            <td class="prop">
                 Shield
             </td>
-            <td>
+            <td class="prop">
                 Power
             </td>
         </tr>
         @foreach (var frame in ViewData["Frame"] as List<Warframe.Models.Warframe>)
         {
             <tr>
-                <td>
+                <td class="prop">
                     @frame.GetRank()
                 </td>
-                <td>
+                <td class="prop">
                     @frame.GetCapacity()
                 </td>
-                <td>
+                <td class="prop">
                     @frame.GetHealth()
                 </td>
-                <td>
+                <td class="prop">
                     @frame.GetShield()
                 </td>
-                <td>
+                <td class="prop">
                     @frame.GetPower()
                 </td>
             </tr>

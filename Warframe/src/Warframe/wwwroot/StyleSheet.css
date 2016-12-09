@@ -2,14 +2,15 @@
     background-image: url(http://i.imgur.com/ev29ExG.jpg);
     width: 100%;
     height: 100vh;
-    text-align:center;
+    text-align: center;
 }
 p.title {
     color:red;
     text-align:center;
 }
-tr, td.prop{
+td.prop{
     border: 1px solid black;
+    padding: 10px;
 }
 
 table{
