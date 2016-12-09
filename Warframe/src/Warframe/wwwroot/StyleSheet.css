@@ -1,9 +1,11 @@
 ﻿body {
+    background-color:grey;
 }
 p.title {
     color:red;
 }
 tr, td.prop{
     border: 1px solid black;
+    background-color:white;
 }
 
