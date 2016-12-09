@@ -20,11 +20,11 @@ namespace Warframe.Controllers
         {
             List<Models.Link> names = new List<Models.Link>();
             names.Add(new Models.Link("Fleeting Expertise", "WarframeDatabase/Mod/Fleeting%20Expertise"));
-            names.Add(new Models.Link("Sound Quake", "WarframeDatabase/Ability"));
-            names.Add(new Models.Link("Arcane Energize", "WarframeDatabase/Arcane"));
-            names.Add(new Models.Link("Arcane Aura Helmet", "WarframeDatabase/ArcaneHelmet"));
-            names.Add(new Models.Link("Banshee", "WarframeDatabase/Warframe"));
-            names.Add(new Models.Link("Tonkor", "WarframeDatabase/Weapon"));
+            names.Add(new Models.Link("Sound Quake", "WarframeDatabase/Ability/Sound%20Quake"));
+            names.Add(new Models.Link("Arcane Energize", "WarframeDatabase/Arcane/Arcane%20Energize"));
+            names.Add(new Models.Link("Arcane Reverb Helmet", "WarframeDatabase/ArcaneHelmet/Arcane%20Reverb%20Helmet"));
+            names.Add(new Models.Link("Banshee", "WarframeDatabase/Warframe/Banshee"));
+            names.Add(new Models.Link("Tonkor", "WarframeDatabase/Weapon/Tonkor"));
 
             ViewData["names"] = names;
 
@@ -65,7 +65,7 @@ namespace Warframe.Controllers
          * Arcane
          */
 
-        public IActionResult Arcane()
+        public IActionResult Arcane(String name)
         {
             ViewData["Arcane Name"] = "Arcane Energize";
             return View();
@@ -75,9 +75,9 @@ namespace Warframe.Controllers
          * ArcaneHelmet
          */
 
-        public IActionResult ArcaneHelmet()
+        public IActionResult ArcaneHelmet(String name)
         {
-            ViewData["ArcaneHelmet Name"] = "Arcane Aura Helmet";
+            ViewData["ArcaneHelmet Name"] = "Arcane Reverb Helmet";
             return View();
         }
 
@@ -85,7 +85,7 @@ namespace Warframe.Controllers
          * Warframe
          */
 
-        public IActionResult Warframe()
+        public IActionResult Warframe(String name)
         {
             ViewData["Warframe Name"] = "Banshee";
 
@@ -100,7 +100,7 @@ namespace Warframe.Controllers
          * Weapon
          */
 
-        public IActionResult Weapon()
+        public IActionResult Weapon(String name)
         {
             ViewData["Weapon Name"] = "Tonkor";
             return View();
