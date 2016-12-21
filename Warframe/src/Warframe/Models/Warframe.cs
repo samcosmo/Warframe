@@ -11,9 +11,9 @@ namespace Warframe.Models
         public int capacity;
         public int health;
         public int shield;
-        public int power;
+        public double power;
 
-        public Warframe(int rank, int capacity, int health, int shield, int power)
+        public Warframe(int rank, int capacity, int health, int shield, double power)
         {
             this.rank = rank;
             this.capacity = capacity;
@@ -42,7 +42,7 @@ namespace Warframe.Models
             return this.shield;
         }
 
-        public int GetPower()
+        public double GetPower()
         {
             return this.power;
         }
