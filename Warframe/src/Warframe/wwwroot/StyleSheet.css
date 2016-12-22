@@ -18,13 +18,11 @@ p.title {
 }
 td.prop{
     border: 1px solid black;
-    padding: 5px;
 }
 
 td.title{
     font-size: 14px;
     border: 1px solid black;
-    padding: 5px;
 }
 
 table{
