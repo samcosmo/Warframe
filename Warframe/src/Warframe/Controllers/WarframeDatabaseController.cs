@@ -53,9 +53,12 @@ namespace Warframe.Controllers
                 conn.Open();
                 SqlDataReader results = null;
                 SqlCommand query = new SqlCommand("SELECT * FROM MODS", conn);
-                //results = query.ExecuteReader();
+                results = query.ExecuteReader();
 
-                ViewData["Mod Name"] = results["ModName"];
+                if (results.Read())
+                {
+                    ViewData["Mod Name"] = results["ModName"];
+                }
                 conn.Close();
             }
                 
