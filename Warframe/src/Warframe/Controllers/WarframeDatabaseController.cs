@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -47,8 +48,25 @@ namespace Warframe.Controllers
 
         public IActionResult Mod(String name)
         {
-            ViewData["Mod Name"] = name.Replace("%20", " ");
+            using (SqlConnection conn = new SqlConnection("Data Source = LAP7OP\\SQLEXPRESS; Initial Catalog = Warframe; Integrated Security = True"))
+            {
+                try
+                {
+                    conn.Open();
+                    SqlDataReader results = null;
+                    SqlCommand query = new SqlCommand("SELECT * FROM MODS", conn);
+                    results = query.ExecuteReader();
+                    conn.Close();
 
+                    ViewData["Mod Name"] = results["ModName"];
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+                
+            }
+                
             List<Models.Mod> ranks = new List<Models.Mod>();
             ranks.Add(new Models.Mod(0, 6, "+10% POWER EFFICIENCY -10% POWER DURATION"));
             ranks.Add(new Models.Mod(1, 7, "+20% POWER EFFICIENCY -20% POWER DURATION"));
