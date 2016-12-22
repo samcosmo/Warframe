@@ -50,21 +50,13 @@ namespace Warframe.Controllers
         {
             using (SqlConnection conn = new SqlConnection("Data Source = LAP7OP\\SQLEXPRESS; Initial Catalog = Warframe; Integrated Security = True"))
             {
-                try
-                {
-                    conn.Open();
-                    SqlDataReader results = null;
-                    SqlCommand query = new SqlCommand("SELECT * FROM MODS", conn);
-                    results = query.ExecuteReader();
-                    conn.Close();
+                conn.Open();
+                SqlDataReader results = null;
+                SqlCommand query = new SqlCommand("SELECT * FROM MODS", conn);
+                //results = query.ExecuteReader();
 
-                    ViewData["Mod Name"] = results["ModName"];
-                }
-                catch(Exception e)
-                {
-                    Console.WriteLine(e.ToString());
-                }
-                
+                ViewData["Mod Name"] = results["ModName"];
+                conn.Close();
             }
                 
             List<Models.Mod> ranks = new List<Models.Mod>();
