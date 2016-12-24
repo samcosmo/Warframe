@@ -13,6 +13,8 @@ namespace Warframe.Controllers
 {
     public class WarframeDatabaseController : Controller
     {
+        private String connString = "Data Source=LAP7OP\\SQLEXPRESS;Initial Catalog=Warframe;Integrated Security=True";
+
         /*
          * Index
          */
@@ -26,6 +28,7 @@ namespace Warframe.Controllers
             names.Add(new Models.Link("Arcane Reverb Helmet", "WarframeDatabase/ArcaneHelmet/Arcane%20Reverb%20Helmet"));
             names.Add(new Models.Link("Banshee", "WarframeDatabase/Warframe/Banshee"));
             names.Add(new Models.Link("Tonkor", "WarframeDatabase/Weapon/Tonkor"));
+            names.Add(new Models.Link("Blind Rage", "WarframeDatabase/Mod/Blind%20Rage"));
 
             ViewData["names"] = names;
 
@@ -48,27 +51,19 @@ namespace Warframe.Controllers
 
         public IActionResult Mod(String name)
         {
-            using (SqlConnection conn = new SqlConnection("Data Source = LAP7OP\\SQLEXPRESS; Initial Catalog = Warframe; Integrated Security = True"))
-            {
-                conn.Open();
-                SqlDataReader results = null;
-                SqlCommand query = new SqlCommand("SELECT * FROM MODS", conn);
-                results = query.ExecuteReader();
 
-                if (results.Read())
-                {
-                    ViewData["Mod Name"] = results["ModName"];
-                }
-                conn.Close();
-            }
-                
+            int id = Database.Database.GetModId(name)[0];
+            ViewData["Mod Name"] = Database.Database.GetModName(id);
+
             List<Models.Mod> ranks = new List<Models.Mod>();
-            ranks.Add(new Models.Mod(0, 6, "+10% POWER EFFICIENCY -10% POWER DURATION"));
-            ranks.Add(new Models.Mod(1, 7, "+20% POWER EFFICIENCY -20% POWER DURATION"));
-            ranks.Add(new Models.Mod(2, 8, "+30% POWER EFFICIENCY -30% POWER DURATION"));
-            ranks.Add(new Models.Mod(3, 9, "+40% POWER EFFICIENCY -40% POWER DURATION"));
-            ranks.Add(new Models.Mod(4, 10, "+50% POWER EFFICIENCY -50% POWER DURATION"));
-            ranks.Add(new Models.Mod(5, 11, "+60% POWER EFFICIENCY -60% POWER DURATION"));
+            int drain = Database.Database.GetModDrain(id);
+            int maxRank = Database.Database.GetModMaxRank(id);
+
+            for(int i = 0; i <= maxRank; i++)
+            {
+                ranks.Add(new Models.Mod(i, i + drain, "+10% POWER EFFICIENCY -10% POWER DURATION"));
+            }
+
             ViewData["Ranks"] = ranks;
 
             return View();
