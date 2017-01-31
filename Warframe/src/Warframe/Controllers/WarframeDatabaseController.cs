@@ -41,7 +41,7 @@ namespace Warframe.Controllers
 
         public IActionResult Ability()
         {
-            ViewData["Ability Name"] = "Sound Quake";
+            ViewData["Ability Name"] = Database.Database.FillNumbers("hello eeh === thre", 1);
             return View();
         }
 

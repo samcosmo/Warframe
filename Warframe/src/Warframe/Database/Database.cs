@@ -103,6 +103,28 @@ namespace Warframe.Database
             return rank;
         }
 
+        private static String GetModText(int id)
+        {
+            String text = "";
+            try
+            {
+                conn.Open();
+                SqlCommand query = new SqlCommand("SELECT ModName FROM MODS WHERE Id = " + id + ";", conn);
+                SqlDataReader results = query.ExecuteReader();
+
+                if (results.Read())
+                {
+                    text = results["ModText"].ToString();
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                //Should probably do something here hey
+            }
+            return text;
+        }
+
         /*
          * Some Utility functions
          */
@@ -110,11 +132,33 @@ namespace Warframe.Database
         public static String FillNumbers(String initial, params int[] values)
         {
             char[] text = initial.ToCharArray();
+            char[] output = new char[text.Length];
+
+            char[] keyPhrase = {'=','=','='}; //the phrase you are searching for
+            int j = 0; //state value
+
             for(int i = 0; i < text.Length; i++)
             {
+                if (text[i] == keyPhrase[j])
+                {
+                    j++;
 
+                    if(j == keyPhrase.Length)
+                    {
+                        output[i] = '1';
+                    }
+                }
+                else
+                {
+                    while(j > 0)
+                    {
+                        output[i - j] = text[i];
+                        j--;
+                    }
+                    output[i] = text[i];
+                }
             }
-            return new String(text);
+            return new String(output);
         }
     }
 }
